@@ -31,6 +31,7 @@ namespace SinavSistemi.API
             var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DatabaseContext>(options => options.UseSqlite(connection));
             services.AddControllers();
+            services.AddSwaggerDocument();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +58,8 @@ namespace SinavSistemi.API
                 endpoints.MapControllers();
             });
 
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }

@@ -460,3 +460,13 @@
 /Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/obj/Debug/net5.0/SinavSistemi.UI.pdb
 /Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/obj/Debug/net5.0/SinavSistemi.UI.genruntimeconfig.cache
 /Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/obj/Debug/net5.0/Razor/Views/Home/AttendanceView.cshtml.g.cs
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/Namotion.Reflection.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/NJsonSchema.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/NJsonSchema.Yaml.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/NSwag.Annotations.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/NSwag.AspNetCore.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/NSwag.Core.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/NSwag.Core.Yaml.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/NSwag.Generation.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/NSwag.Generation.AspNetCore.dll
+/Users/dogukansimsek/Projects/SinavSistemi/SinavSistemi.UI/bin/Debug/net5.0/YamlDotNet.dll
