@@ -1,0 +1,81 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+@section Styles{
+    <link href="~/css/form-validation.css" rel="stylesheet">
+}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+
+    <div class="row g-5">
+        <div class="col-md-7 col-lg-8 pt-5">
+            <h4 class="mb-3">Kullanıcı Ekle</h4>
+            @using (Html.BeginForm("UsersAdd", "Home", FormMethod.Post))
+            {
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <label for="Ad" class="form-label">Adı</label>
+                        @Html.TextBox("Ad", null, "", new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-sm-6">
+                        <label for="Soyad" class="form-label">Soyadı</label>
+                        @Html.TextBox("Soyad", null, "", new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-12">
+                        <label for="KullaniciAdi" class="form-label">Kullanıcı Adı</label>
+                        <div class="input-group has-validation">
+                            <span class="input-group-text">@@</span>
+                            @Html.TextBox("KullaniciAdi", null, "", new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="Sifre" class="form-label">Şifre</label>
+                        @Html.TextBox("Sifre", null, "", new { @class = "form-control", type = "password" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <button class="w-100 btn btn-primary btn-lg" type="submit">Oluştur</button>
+            }
+        </div>
+    </div>
+</main>
+<input type="text" id="basarili" value='@TempData["BASARILI"]' style="display:none;" />
+<input type="text" id="hata" value='@TempData["HATA"]' style="display:none;" />
+@section Scripts{
+    <script src="~/js/form-validation.js"></script>
+    <script>var basarili = $("#basarili").val();
+        var hata = $("#hata").val();
+
+        if (hata == "Kutucuklar boş olamaz!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Lütfen tüm kutucukları doldurarak tekrar deneyiniz!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+        if (hata == "Kayıt yapılırken bir sorun oluştu!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Kayıt olurken bir hata oluştu, lütfen tekrar deneyiniz!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+        if (hata == "Kullanıcı daha önce kayıt olmuş!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Bu bilgiler ile kullanıcı mevcut!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+    </script>
+}

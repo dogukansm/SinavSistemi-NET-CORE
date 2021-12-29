@@ -1,0 +1,115 @@
+﻿@{
+    Layout = "";
+}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Konuşarak Öğren - Sınav Sistemi</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+    <!-- Bootstrap core CSS -->
+
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @@media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .register {
+            text-decoration: none !important;
+            display: block;
+            margin-top: .5em;
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="~/css/signin.css" rel="stylesheet">
+</head>
+<body class="text-center">
+
+    <main class="form-signin">
+
+        @using (Html.BeginForm("Register", "Home", FormMethod.Post))
+        {
+            <img class="mb-4" src="~/images/logo.png" alt="" height="100">
+
+            <div class="form-floating">
+                @Html.TextBox("Ad", null, "", new { @class = "form-control", placeholder = "Adınız" })
+                <label for="Ad">Adınız</label>
+            </div>
+            <div class="form-floating">
+                @Html.TextBox("Soyad", null, "", new { @class = "form-control", placeholder = "Soyadınız" })
+                <label for="Soyad">Soyadınız</label>
+            </div>
+            <div class="form-floating">
+                @Html.TextBox("KullaniciAdi", null, "", new { @class = "form-control", placeholder = "Kullanıcı Adı" })
+                <label for="KullaniciAdi">Kullanıcı Adı</label>
+            </div>
+            <div class="form-floating">
+                @Html.TextBox("Sifre", null, "", new { @class = "form-control", placeholder = "Kullanıcı Adı", type = "password" })
+                <label for="Sifre">Şifre</label>
+            </div>
+
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Kayıt Ol</button>
+            <a asp-area="" asp-controller="Home" asp-action="Login" class="register">Giriş Yap</a>
+            <p class="mt-5 mb-3 text-muted">&copy; 2021</p>
+        }
+    </main>
+
+    <input type="text" id="basarili" value='@TempData["BASARILI"]' style="display:none;" />
+    <input type="text" id="hata" value='@TempData["HATA"]' style="display:none;" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"></script>
+    <script>var basarili = $("#basarili").val();
+        var hata = $("#hata").val();
+       
+        if (hata == "Kutucuklar boş olamaz!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Lütfen tüm kutucukları doldurarak tekrar deneyiniz!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+        if (hata == "Kayıt yapılırken bir sorun oluştu!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Kayıt olurken bir hata oluştu, lütfen tekrar deneyiniz!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+        if (hata == "Kullanıcı daha önce kayıt olmuş!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Bu bilgiler ile kullanıcı mevcut!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+    </script>
+
+
+</body>
+</html>

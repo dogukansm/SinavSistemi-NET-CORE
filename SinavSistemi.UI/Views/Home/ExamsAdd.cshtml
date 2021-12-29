@@ -1,0 +1,229 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+@section Styles{
+    <link href="~/css/form-validation.css" rel="stylesheet">
+}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+
+    <div class="row g-5">
+        <div class="col-md-7 col-lg-8 pt-5">
+            <h4 class="mb-3">Sınav Oluştur</h4>
+            @using (Html.BeginForm("ExamsAdd", "Home", FormMethod.Post))
+            {
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="RSSSelect" class="form-label">Sınav Sorusu</label>
+                        @Html.DropDownList("RSSSelect", (List<SelectListItem>)ViewBag.RSSFeed, "Lütfen seçiniz..", new { @class = "form-control" })
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="RSSArea" class="form-label">Soru Metni</label>
+                        @Html.TextArea("RSSArea", new { @class = "form-control", style = "resize:none;", rows = "4" })
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="Soru1" class="form-label">1.Soru</label>
+                        @Html.TextBox("Soru1", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap1A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap1A", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap1B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap1B", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap1C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap1C", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap1D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap1D", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="DogruCevap1" class="form-label">1.Soru Cevabı</label>
+                        @Html.DropDownList("DogruCevap1", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="Soru2" class="form-label">2.Soru</label>
+                        @Html.TextBox("Soru2", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap2A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap2A", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap2B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap2B", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap2C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap2C", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap2D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap2D", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="DogruCevap2" class="form-label">2.Soru Cevabı</label>
+                        @Html.DropDownList("DogruCevap2", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="Soru3" class="form-label">3.Soru</label>
+                        @Html.TextBox("Soru3", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap3A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap3A", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap3B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap3B", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap3C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap3C", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap3D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap3D", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="DogruCevap3" class="form-label">3.Soru Cevabı</label>
+                        @Html.DropDownList("DogruCevap3", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="Soru4" class="form-label">4.Soru</label>
+                        @Html.TextBox("Soru4", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap4A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap4A", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap4B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap4B", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap4C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap4C", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap4D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap4D", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="DogruCevap4" class="form-label">4.Soru Cevabı</label>
+                        @Html.DropDownList("DogruCevap4", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="Soru5" class="form-label">5.Soru</label>
+                        @Html.TextBox("Soru5", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap5A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap5A", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap5B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap5B", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap5C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap5C", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap5D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap5D", null, "", new { @class = "form-control" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="DogruCevap5" class="form-label">5.Soru Cevabı</label>
+                        @Html.DropDownList("DogruCevap5", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <button class="w-100 btn btn-primary btn-lg mb-5" type="submit">Oluştur</button>
+            }
+        </div>
+    </div>
+</main>
+<input type="text" id="basarili" value='@TempData["BASARILI"]' style="display:none;" />
+<input type="text" id="hata" value='@TempData["HATA"]' style="display:none;" />
+@section Scripts{
+    <script src="~/js/form-validation.js"></script>
+    <script>
+        $(function () {
+            $("#RSSSelect").change(function () {
+                var id = $("#RSSSelect").val();
+                $.ajax({
+                    url: '/Home/GetRSSText',
+                    data: { p: id },
+                    type: "POST",
+                    dataType: "Json",
+                    success: function (data) {
+                        $("#RSSArea").text(data.description);
+                    }
+                });
+            });
+        });
+    </script>
+    <script>var basarili = $("#basarili").val();
+        var hata = $("#hata").val();
+
+        if (hata == "Kutucuklar boş olamaz!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Lütfen tüm kutucukları doldurarak tekrar deneyiniz!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+        if (hata == "Kayıt yapılırken bir sorun oluştu!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Kayıt olurken bir hata oluştu, lütfen tekrar deneyiniz!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+        if (hata == "Kullanıcı daha önce kayıt olmuş!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Bu bilgiler ile kullanıcı mevcut!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }</script>
+}

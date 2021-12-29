@@ -1,0 +1,232 @@
+﻿@model dynamic
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "_Layout";
+}
+@section Styles{
+    <link href="~/css/form-validation.css" rel="stylesheet">
+}
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+
+    <div class="row g-5">
+        <div class="col-md-7 col-lg-8 pt-5">
+            <h4 class="mb-3">Sınava Katıl</h4>
+            @using (Html.BeginForm("ExamsJoin", "Home", FormMethod.Post))
+            {
+                <div class="row g-3">
+                    <div class="col-sm-12">
+                        <label for="RSSSelect" class="form-label">Sınav Sorusu</label>
+                        @Html.TextBox("RSSSelect", (string)ViewBag.RSSFeed.Title, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+
+                    <div class="col-sm-12">
+                        <label for="RSSArea" class="form-label">Soru Metni</label>
+                        @Html.TextArea("RSSArea", (string)ViewBag.RSSFeed.Description, new { @class = "form-control", style = "resize:none;", rows = "4", disabled = "true" })
+                    </div>
+
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    @Html.Hidden("Soru1ID", (int)ViewBag.Questions[0].ID)
+                    <div class="col-sm-12">
+                        <label for="Soru1" class="form-label">1.Soru</label>
+                        @Html.TextBox("Soru1", (string)ViewBag.Questions[0].Soru, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap1A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap1A", (string)ViewBag.Questions[0].Cevap_A, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap1B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap1B", (string)ViewBag.Questions[0].Cevap_B, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap1C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap1C", (string)ViewBag.Questions[0].Cevap_C, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap1D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap1D", (string)ViewBag.Questions[0].Cevap_D, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="Cevap1" class="form-label">1.Soru Cevabı</label>
+                        @Html.DropDownList("Cevap1", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    @Html.Hidden("Soru2ID", (int)ViewBag.Questions[1].ID)
+                    <div class="col-sm-12">
+                        <label for="Soru2" class="form-label">2.Soru</label>
+                        @Html.TextBox("Soru2", (string)ViewBag.Questions[1].Soru, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap2A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap2A", (string)ViewBag.Questions[1].Cevap_A, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap2B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap2B", (string)ViewBag.Questions[1].Cevap_B, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap2C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap2C", (string)ViewBag.Questions[1].Cevap_C, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap2D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap2D", (string)ViewBag.Questions[1].Cevap_D, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="Cevap2" class="form-label">2.Soru Cevabı</label>
+                        @Html.DropDownList("Cevap2", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    @Html.Hidden("Soru3ID", (int)ViewBag.Questions[2].ID)
+                    <div class="col-sm-12">
+                        <label for="Soru3" class="form-label">3.Soru</label>
+                        @Html.TextBox("Soru3", (string)ViewBag.Questions[2].Soru, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap3A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap3A", (string)ViewBag.Questions[2].Cevap_A, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap3B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap3B", (string)ViewBag.Questions[2].Cevap_B, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap3C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap3C", (string)ViewBag.Questions[2].Cevap_C, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap3D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap3D", (string)ViewBag.Questions[2].Cevap_D, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="Cevap3" class="form-label">3.Soru Cevabı</label>
+                        @Html.DropDownList("Cevap3", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    @Html.Hidden("Soru4ID", (int)ViewBag.Questions[3].ID)
+                    <div class="col-sm-12">
+                        <label for="Soru4" class="form-label">4.Soru</label>
+                        @Html.TextBox("Soru4", (string)ViewBag.Questions[3].Soru, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap4A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap4A", (string)ViewBag.Questions[3].Cevap_A, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap4B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap4B", (string)ViewBag.Questions[3].Cevap_B, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap4C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap4C", (string)ViewBag.Questions[3].Cevap_C, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap4D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap4D", (string)ViewBag.Questions[3].Cevap_D, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="Cevap4" class="form-label">4.Soru Cevabı</label>
+                        @Html.DropDownList("Cevap4", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <div class="row g-3">
+                    @Html.Hidden("Soru5ID", (int)ViewBag.Questions[4].ID)
+                    <div class="col-sm-12">
+                        <label for="Soru5" class="form-label">5.Soru</label>
+                        @Html.TextBox("Soru5", (string)ViewBag.Questions[4].Soru, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap5A" class="form-label">A.</label>
+                        @Html.TextBox("Cevap5A", (string)ViewBag.Questions[4].Cevap_A, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap5B" class="form-label">B.</label>
+                        @Html.TextBox("Cevap5B", (string)ViewBag.Questions[4].Cevap_B, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap5C" class="form-label">C.</label>
+                        @Html.TextBox("Cevap5C", (string)ViewBag.Questions[4].Cevap_C, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="Cevap5D" class="form-label">D.</label>
+                        @Html.TextBox("Cevap5D", (string)ViewBag.Questions[4].Cevap_D, "", new { @class = "form-control", disabled = "true" })
+                    </div>
+                    <div class="col-sm-12">
+                        <label for="Cevap5" class="form-label">5.Soru Cevabı</label>
+                        @Html.DropDownList("Cevap5", (List<SelectListItem>)ViewBag.Cevaplar, new { @class = "form-control" })
+                    </div>
+                </div>
+
+                <hr class="my-4">
+                @Html.Hidden("id", (int)ViewBag.Exam.ID);
+                <button class="w-100 btn btn-primary btn-lg mb-5" type="submit">Kaydet</button>
+            }
+        </div>
+    </div>
+</main>
+<input type="text" id="basarili" value='@TempData["BASARILI"]' style="display:none;" />
+<input type="text" id="hata" value='@TempData["HATA"]' style="display:none;" />
+@section Scripts{
+    <script src="~/js/form-validation.js"></script>
+    <script>$(function () {
+            $("#RSSSelect").change(function () {
+                var id = $("#RSSSelect").val();
+                $.ajax({
+                    url: '/Home/GetRSSText',
+                    data: { p: id },
+                    type: "POST",
+                    dataType: "Json",
+                    success: function (data) {
+                        $("#RSSArea").text(data.description);
+                    }
+                });
+            });
+        });</script>
+    <script>var basarili = $("#basarili").val();
+        var hata = $("#hata").val();
+
+        if (hata == "Kutucuklar boş olamaz!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Lütfen tüm kutucukları doldurarak tekrar deneyiniz!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+        if (hata == "Kayıt yapılırken bir sorun oluştu!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Kayıt olurken bir hata oluştu, lütfen tekrar deneyiniz!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }
+        if (hata == "Kullanıcı daha önce kayıt olmuş!") {
+            Swal.fire({
+                title: 'Hata!',
+                text: 'Bu bilgiler ile kullanıcı mevcut!',
+                icon: 'error',
+                confirmButtonText: 'Kapat'
+            })
+        }</script>
+}
